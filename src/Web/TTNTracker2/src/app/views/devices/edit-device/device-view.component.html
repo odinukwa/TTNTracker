@@ -1,0 +1,71 @@
+<div class="row mr-1 ml-1">
+    <div class="col-8 pt-4 pb-2" style="background: #f8f8f8;">
+        <fieldset>
+            <legend>General Information</legend>
+
+
+            <div class="form-group row">
+                <label for="appEui" class="col-md-3 col-form-label">Device ID</label>
+                <div class="col-md-6">
+                    <input type="text" maxlength="23" minlength="23" name="deviceId" disabled class="form-control "
+                        value="{{service.devModel2.deviceId}}">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="deviceDescription" class="col-md-3 col-form-label">Device Description</label>
+                <div class="col-md-6">
+                    <label class="">{{service.devModel2.deviceDescription}}</label>
+
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="deviceDescription" class="col-md-3 col-form-label">Created at</label>
+                <div class="col-md-6">
+                    <label class="">{{service.devModel2.dateCreated | date: 'MMM d, y, h:mm:ss a'}}</label>
+
+
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Activation Information</legend>
+
+
+            <div class="form-group row">
+                <label for="appEui" class="col-md-3 col-form-label">App EUI</label>
+                <div class="col-md-6">
+                    <input type="text" maxlength="23" minlength="23" name="appEui" disabled class="form-control "
+                        value="{{service.devModel2.appEui}}">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="devEui" class="col-md-3 col-form-label">Dev EUI</label>
+                <div class="col-md-6">
+                    <input type="text" maxlength="23" minlength="23" name="devEui" disabled class="form-control "
+                        value="{{service.devModel2.devEui}}">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="appKey" class="col-md-3 col-form-label">App Key</label>
+                <div class="col-md-6">
+                    <input type="text" maxlength="23" minlength="23" name="appKey" disabled class="form-control "
+                        value="{{service.devModel2.appKey}}">
+
+                </div>
+            </div>
+        </fieldset>
+
+
+    </div>
+    <div class="col-4" style="background: #f8f8f8;">
+
+        <div class="mt-3 qr_image">
+            <img src={{qrPath}} style="width:195px;height:195px" />
+
+        </div>
+    </div>
+</div>

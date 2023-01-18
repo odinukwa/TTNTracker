@@ -1,0 +1,98 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            <h5 style="float: left;"> Basic</h5>
+            <div class="card-header-actions">
+                <button type="button" class="btn btn-light active" (click)="isCollapsed = !isCollapsed"
+                    *ngIf='!isCollapsed'><i class="fa fa-minus-circle"></i> Collapse
+                </button>
+                <button type="button" class="btn btn-light active" (click)="isCollapsed = !isCollapsed"
+                    *ngIf='isCollapsed'><i class="fa fa-plus-circle"></i> Expand
+                </button>
+            </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
+            <div class="row">
+                <div class="col-5">
+                    <form [formGroup]="formBModel" autocomplete="off" (submit)="onSubmit()">
+                        <div class=" form-group">
+                            <label class="col-form-label" for="deviceId">Device ID</label>
+                            <div class="controls">
+                                <input class="form-control" formControlName="deviceId" placeholder="" type="text">
+
+                            </div>
+                        </div>
+                        <div class=" form-group">
+                            <label class="col-form-label" for="appEui">AppEUI</label>
+                            <div class="controls">
+                                <input class="form-control" style="max-width: 12.05rem;" formControlName="appEui"
+                                    placeholder="" type="text">
+
+                            </div>
+
+                        </div>
+                        <div class=" form-group">
+                            <label class="col-form-label" for="devEui">DevEUI</label>
+                            <div class="controls">
+                                <input class="form-control" style="max-width: 12.05rem;" formControlName="devEui"
+                                    placeholder="" type="text">
+                            </div>
+                        </div>
+                        <div class=" form-group">
+                            <label class="col-form-label" for="deviceName">Device Name</label>
+                            <div class="controls">
+                                <input class="form-control" formControlName="deviceName" placeholder="" type="text">
+
+                            </div>
+                        </div>
+                        <div class=" form-group">
+                            <label class="col-form-label" for="deviceId">Device Description</label>
+                            <div class="controls">
+                                <textarea class="form-control" deviiceDescription="deviiceDescription" placeholder="">
+                                    </textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="networkServerAddress">Network Server Address</label>
+                            <div class="controls">
+                                <input class="form-control" formControlName="networkServerAddress" placeholder=""
+                                    type="text">
+
+                            </div>
+                        </div>
+                        <div class=" form-group">
+                            <label class="col-form-label" for="applicationServerAddress">Application Server
+                                Address</label>
+                            <div class="controls">
+                                <input class="form-control" formControlName="applicationServerAddress" placeholder=""
+                                    type="text">
+
+                            </div>
+                        </div>
+                        <div class=" form-group">
+                            <label class="col-form-label" for="joinServerAddress">Join Server Address</label>
+                            <div class="controls">
+                                <input class="form-control" formControlName="joinServerAddress" placeholder=""
+                                    type="text">
+
+                            </div>
+                        </div>
+
+                        <div
+                            style=" background-color: lightgoldenrodyellow;;;background-color: #f8f8f8; padding: 1rem;
+                                                                        margin-top: 1.5rem;border-top: 1px solid #dfdfdf;">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger float-right"><i class="fa fa-trash"></i> Delete
+                                Device</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

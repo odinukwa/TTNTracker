@@ -1,0 +1,49 @@
+<style>
+    .table tr {
+        cursor: pointer;
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Devices
+                <button class="btn btn-primary float-right" type="button" [routerLink]="['/devices/add']"><i
+                        class="icon-plus"></i> Add
+                    Device</button>
+            </div>
+            <div class="card-body">
+                <ngx-spinner></ngx-spinner>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th style="width:20%;">ID</th>
+                            <th style="width:30%;">Name</th>
+                            <th style="width:25%;">DevEUI</th>
+                            <th style="width:25%;">JoinEUI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let de of list">
+                            <td [routerLink]="['/devices/d']" [queryParams]='{mid:de.deviceId}'>{{de.deviceId}}</td>
+                            <td [routerLink]="['/devices/d']" [queryParams]='{mid:de.deviceId}'>{{de.deviceName}}</td>
+                            <td [routerLink]="['/devices/d']" [queryParams]='{mid:de.deviceId}'>{{de.devEui}}</td>
+                            <td [routerLink]="['/devices/d']" [queryParams]='{mid:de.deviceId}'>{{de.appEui}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</div>

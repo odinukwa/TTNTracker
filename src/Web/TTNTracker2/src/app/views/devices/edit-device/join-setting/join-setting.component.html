@@ -1,0 +1,43 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            <h5 style="float: left;"> Join Settings <small>App key settings for end device activation
+                </small></h5>
+            <div class="card-header-actions">
+                <button type="button" class="btn btn-light active" (click)="isCollapsed = !isCollapsed"
+                    *ngIf='!isCollapsed'><i class="fa fa-minus-circle"></i> Collapse
+                </button>
+                <button type="button" class="btn btn-light active" (click)="isCollapsed = !isCollapsed"
+                    *ngIf='isCollapsed'><i class="fa fa-plus-circle"></i> Expand
+                </button>
+            </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
+            <div class="row">
+                <div class="col-5">
+                    <form [formGroup]="formJModel" autocomplete="off" (submit)="onSubmit()">
+                        <div class=" form-group">
+                            <label class="col-form-label" for="appKey">Device ID</label>
+                            <div class="controls">
+                                <input class="form-control" formControlName="appKey" placeholder="" type="text">
+
+                            </div>
+                        </div>
+
+
+                        <div
+                            style=" background-color: lightgoldenrodyellow;;;background-color: #f8f8f8; padding: 1rem;
+                                                                        margin-top: 1.5rem;border-top: 1px solid #dfdfdf;">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Changes
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,83 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            <h5 style="float: left;"> Network Layer</h5>
+            <p style="float: left;"> (LoRaWAN network-layer settings, behavior and session)</p>
+            <div class="card-header-actions">
+                <button type="button" class="btn btn-light active" (click)="isCollapsed = !isCollapsed"
+                    *ngIf='!isCollapsed'><i class="fa fa-minus-circle"></i> Collapse
+                </button>
+                <button type="button" class="btn btn-light active" (click)="isCollapsed = !isCollapsed"
+                    *ngIf='isCollapsed'><i class="fa fa-plus-circle"></i> Expand
+                </button>
+            </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed">
+            <div class="row">
+                <div class="col-5">
+                    <form [formGroup]="formNModel" autocomplete="off" (submit)="onSubmit()">
+                        <div class=" form-group">
+                            <label class="col-form-label" for="deviceId">LoRaWan Version</label>
+                            <div class="controls">
+                                <select class="form-control" formControlName="lorawanVersion">
+                                    <option value="">--Select Lorawan Version--</option>
+                                    <option *ngFor="let item of lorawanVersions" [value]="item.id">{{item.name}}
+                                    </option>
+                                </select>
+                                <!-- <label class="text-danger"
+                                        *ngIf="formModel.get('lorawanVersion').touched && formModel.get('lorawanVersion').errors?.required">Lorawan
+                                        Version
+                                    
+                                        is required</label> -->
+                            </div>
+                        </div>
+                        <div class=" form-group">
+                            <label class="col-form-label" for="frequencyPlanId">Frequency Plan</label>
+                            <div class="controls">
+                                <select class="form-control" formControlName="frequencyPlanId">
+                                    <option value="">--Select Frequency Plan--</option>
+                                    <option *ngFor="let item of frequencies" [value]="item.id">{{item.name}}</option>
+                                </select>
+                                <!-- <label class="text-danger"
+                                *ngIf="formModel.get('frequencyPlanId').touched && formModel.get('frequencyPlanId').errors?.required">Frequency
+                                Plan
+                                is required</label> -->
+
+                            </div>
+
+                        </div>
+                        <div class=" form-group">
+                            <label class="col-form-label" for="devEui">LoRaWAN Class Capabilities</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false"
+                                    formControlName="supportsClassB">
+                                <label class="form-check-label" for="supportsClassB">
+                                    Supports Class B
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false"
+                                    formControlName="supportsClassC">
+                                <label class="form-check-label" for="supportsClassC">
+                                    Supports Class C
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div
+                            style=" background-color: lightgoldenrodyellow;;;background-color: #f8f8f8; padding: 1rem;
+                                                                        margin-top: 1.5rem;border-top: 1px solid #dfdfdf;">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Changes
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

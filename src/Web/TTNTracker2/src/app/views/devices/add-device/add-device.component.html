@@ -1,0 +1,175 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            <h5 style="float: left;"><i class="icon-user"></i> Register Device</h5>
+
+        </div>
+        <div class="card-body">
+            <!-- <div style="width: 300px;height:300px;  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  "> -->
+
+            <!-- </div> -->
+            <div class="row mr-1 ml-1">
+                <div class="col-8" style="background: #f8f8f8;">
+                    <form [formGroup]="formModel" autocomplete="off" (submit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="deviceId" class="required">Device ID</label>
+                                <input id="deviceId" formControlName="deviceId" class="form-control"
+                                    placeholder="Device ID">
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('deviceId').touched && formModel.get('deviceId').errors?.required">Device
+                                    Id
+                                    is required</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="deviceName">Device Name</label>
+                                <input id="deviceName" formControlName="deviceName" class="form-control"
+                                    placeholder="Device Name">
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('deviceName').touched && formModel.get('deviceName').errors?.required">Device
+                                    Name
+                                    is required</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="appEui">App EUI</label>
+                                <input type="text" maxlength="23" minlength="23" formControlName="appEui"
+                                    class="form-control" placeholder="App EUI" (keydown)="keyPressAlphanumeric($event)"
+                                    oninput="this.value = this.value.toUpperCase()" (keyup)="myFunction($event)">
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('appEui').touched && formModel.get('appEui').errors?.required">App
+                                    EUI is required</label>
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('appEui').touched && (formModel.get('appEui').errors?.minlength || formModel.get('appEui').errors?.maxlength)">App
+                                    EUI must be 8byte</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="devEui">Dev EUI</label>
+                                <input type="text" formControlName="devEui" class="form-control"
+                                    placeholder="Device EUI" maxlength="23" minlength="23"
+                                    (keydown)="keyPressAlphanumeric($event)"
+                                    oninput="this.value = this.value.toUpperCase()" (keyup)="myFunction($event)">
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('devEui').touched && formModel.get('devEui').errors?.required">Dev
+                                    EUI is required</label>
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('devEui').touched && (formModel.get('devEui').errors?.minlength || formModel.get('appEui').errors?.maxlength)">Dev
+                                    EUI must be 8byte</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="lorawanVersion">Lorawan Version</label>
+                                <select class="form-control" formControlName="lorawanVersion">
+                                    <option value="">--Select Lorawan Version--</option>
+                                    <option *ngFor="let item of lorawanVersions" [value]="item.id">{{item.name}}
+                                    </option>
+                                </select>
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('lorawanVersion').touched && formModel.get('lorawanVersion').errors?.required">Lorawan
+                                    Version
+
+                                    is required</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="frequencyPlanId">Frequency Plan</label>
+                                <select class="form-control" formControlName="frequencyPlanId">
+                                    <option value="">--Select Frequency Plan--</option>
+                                    <option *ngFor="let item of frequencies" [value]="item.id">{{item.name}}</option>
+                                </select>
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('frequencyPlanId').touched && formModel.get('frequencyPlanId').errors?.required">Frequency
+                                    Plan
+                                    is required</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Lorawan Class Capabilities</label><br />
+                                <div class="form-check form-check-inline mr-1">
+                                    <input class="form-check-input" type="checkbox" formControlName="supportsClassB">
+                                    <label class="form-check-label" for="supportsClassB">Support Class b</label>
+                                </div>
+                                <div class="form-check form-check-inline mr-1">
+                                    <input class="form-check-input" type="checkbox" formControlName="supportsClassC">
+                                    <label class="form-check-label" for="supportsClassC">Support Class c</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="networkServerAddress">Network Server address</label>
+                                <input type="text" formControlName="networkServerAddress" class="form-control"
+                                    placeholder="Network Server Address">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="applicationServerAddress">Application Server address</label>
+                                <input type="text" formControlName="applicationServerAddress" class="form-control"
+                                    placeholder="Application Server Address">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="joinServerAddress">Join Server address</label>
+                                <input type="text" formControlName="joinServerAddress" class="form-control"
+                                    placeholder="Join Server address">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="deviceDescription">Device Description</label>
+                                <textarea type="password" formControlName="deviceDescription"
+                                    class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-9">
+                                <label for="appKey">App Key</label>
+                                <input type="text" formControlName="appKey" class="form-control" style="width:330px"
+                                    placeholder="00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" maxlength="47"
+                                    minlength="47" (keydown)="keyPressAlphanumeric($event)"
+                                    oninput="this.value = this.value.toUpperCase()" (keyup)="myFunction($event)">
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('appKey').touched && formModel.get('appKey').errors?.required">App
+                                    Key
+                                    is required</label>
+                                <label class="text-danger"
+                                    *ngIf="formModel.get('appKey').touched && (formModel.get('appKey').errors?.minlength || formModel.get('appEui').errors?.maxlength)">App
+                                    Key
+                                    must be 16 byte</label>
+                            </div>
+                        </div>
+                        <div
+                            style=" background-color: lightgoldenrodyellow;background-color: #f8f8f8; padding: 1rem;
+                                                                                        margin-top: 1.5rem;border-top: 1px solid #dfdfdf;">
+                            <button type="submit" class="btn btn-primary float-right"
+                                [disabled]="!formModel.valid || isLoading" (click)="toggleLoading()">
+                                <img *ngIf="isLoading" src="../../../../assets/spinner.gif" width="25px" /> Add Device
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-block btn-secondary" (click)='enableCamera()'><i class="fa fa-qrcode"></i>
+                        Scan
+                        Device Qr
+                        Code</button>
+                    <div class="mt-3" *ngIf='displayCamera === true'>
+                        <h5>Zoom in on the QR code</h5>
+                        <zxing-scanner [enable]="displayCamera" [device]="deviceCurrent"
+                            (scanSuccess)="onCodeResult($event)"
+                            [formats]="['QR_CODE', 'EAN_13', 'CODE_128', 'DATA_MATRIX']"
+                            (camerasFound)="onCamerasFound($event)">
+                        </zxing-scanner>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,34 @@
+<div class="_1Wr5PLXF1f"><img class="_3h4eC6HhQy" src="../../../../assets/img/device.svg" alt="End device">
+    <div class="rwQFu81Rbw">
+        <h1 class="_3p_37PX3DQ">{{service.devModel2.deviceName}}</h1><span class="_3MUyRAmn39"><span
+                class="_1reH8agWs5 c1HIkwVA79">ID</span>{{service.devModel2.deviceId}}</span>
+    </div>
+</div>
+
+<div class="animated fadeIn mt-4">
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <!-- Nav tabs -->
+            <tabset>
+                <tab heading="Dashboard">
+                    <div class="map-container">
+                        <div class="map-frame">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading="Overview">
+                    <app-device-view></app-device-view>
+                </tab>
+                <tab heading="Downlinks">
+                    <app-device-downlinks></app-device-downlinks>
+                </tab>
+                <tab heading="General Settings">
+                    <app-device-settings></app-device-settings>
+                </tab>
+            </tabset>
+        </div>
+
+    </div>
+    <!--/.row-->
+</div>

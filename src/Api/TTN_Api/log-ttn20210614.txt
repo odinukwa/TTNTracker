@@ -1,0 +1,513 @@
+06/14/2021 12:21:24 +02:00 Application Starting.
+06/14/2021 12:22:19 +02:00 Request: "{
+  \"@type\": \"type.googleapis.com/ttn.lorawan.v3.ApplicationUp\",
+  \"end_device_ids\": {
+    \"device_id\": \"grp1-dev1\",
+    \"application_ids\": {
+      \"application_id\": \"ttn-ddoit-test\"
+    },
+    \"dev_eui\": \"500291883D94FEFF\",
+    \"join_eui\": \"70B3D50000000002\",
+    \"dev_addr\": \"260B03F4\"
+  },
+  \"correlation_ids\": [
+    \"as:up:01F80XFRKV826QVEZYX0110VFG\",
+    \"ns:uplink:01F80XFRD5XMQK79NAZNYHAYNH\",
+    \"pba:conn:up:01F7XM3EVNAGTKAXW558W1767Q\",
+    \"pba:uplink:01F80XFR9XAHP4HPHDRMSF2N2R\",
+    \"rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01F80XFRD4WEHJ0SWYF1WN1X9Q\",
+    \"rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01F80XFRKV7N0QATK476NDA0J1\"
+  ],
+  \"received_at\": \"2021-06-12T20:09:23.324239701Z\",
+  \"uplink_message\": {
+    \"session_key_id\": \"AXoBD2kJirkNxZ0ul20/xQ==\",
+    \"f_port\": 4,
+    \"f_cnt\": 83,
+    \"frm_payload\": \"gv7kAoxQzQAEAQBAAQ==\",
+    \"decoded_payload\": {
+      \"altitude\": 320,
+      \"bytes\": [
+        130,
+        254,
+        228,
+        2,
+        140,
+        80,
+        205,
+        0,
+        4,
+        1,
+        0,
+        64,
+        1
+      ],
+      \"hdop\": 0.01,
+      \"latitude\": 48.561794,
+      \"longitude\": 13.4555,
+      \"port\": 4,
+      \"sats\": 4
+    },
+    \"rx_metadata\": [
+      {
+        \"gateway_ids\": {
+          \"gateway_id\": \"packetbroker\"
+        },
+        \"packet_broker\": {
+          \"message_id\": \"01F80XFR9XAHP4HPHDRMSF2N2R\",
+          \"forwarder_net_id\": \"000013\",
+          \"forwarder_tenant_id\": \"ttn\",
+          \"forwarder_cluster_id\": \"ttn-v2-eu-4\",
+          \"home_network_net_id\": \"000013\",
+          \"home_network_tenant_id\": \"ttn\",
+          \"home_network_cluster_id\": \"ttn-eu1\",
+          \"hops\": [
+            {
+              \"received_at\": \"2021-06-12T20:09:23.005472425Z\",
+              \"sender_address\": \"52.169.150.138\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.006117112Z\",
+              \"sender_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"sender_address\": \"forwarder_uplink\",
+              \"receiver_name\": \"router-666f4cd6b8-t6w9f\",
+              \"receiver_agent\": \"pbrouter/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.007374752Z\",
+              \"sender_name\": \"router-666f4cd6b8-t6w9f\",
+              \"sender_address\": \"deliver.000013_ttn_ttn-eu1.uplink\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-88k7w\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            }
+          ]
+        },
+        \"time\": \"2021-06-12T20:09:22.980222Z\",
+        \"rssi\": -47,
+        \"channel_rssi\": -47,
+        \"snr\": 10,
+        \"uplink_token\": \"eyJnIjoiWlhsS2FHSkhZMmxQYVVwQ1RWUkpORkl3VGs1VE1XTnBURU5LYkdKdFRXbFBhVXBDVFZSSk5GSXdUazVKYVhkcFlWaFphVTlwU2tkU00yUXpZMFJvZEdJelRqRmlla1p6VkZVNVlVbHBkMmxrUjBadVNXcHZhVlpyV2xKa2JWRXlUa2hHZDA5R1drNWpWRUpXV20xUmVGcHNRakphZVVvNUxrNVBNVlZUVUZkaGNYSkhTamx5VDFCTUxXdFpPRUV1ZWw4MlQwRkJXRzEzUzA5aFMyeFVSeTR4UVZkZlpGUlVTV1pLV2pabWNFMVplbWxvUWs5TGRWTnZlbGhzTkhCalJtTlNWbGxIVFhJdGRUbHJWMHRXTjBGcVRXcFNVbWxaVlhSbGFtOVdZVWM0ZFMxMFpXeFBYMTl1VERkc2VuTlhkSFJwUm5sM1FXdElkWGxsYm0xdU1YcDNTVmN5UzNScFltb3lPVzF5WjNkb2RsQTFhREpUYkU1WGVVRkJlVEpmUzNKa1lXOU1XVGhsZEc5MVowUkdVV294V25JMFQxOUhSbkpvUkRoSFNHTlJVMmhMWDB0U1RTNVRZbGhxU0ZOMFFXOUhOemxtVFcxNVlrOW1hbGQzIiwiYSI6eyJmbmlkIjoiMDAwMDEzIiwiZnRpZCI6InR0biIsImZjaWQiOiJ0dG4tdjItZXUtNCJ9fQ==\"
+      }
+    ],
+    \"settings\": {
+      \"data_rate\": {
+        \"lora\": {
+          \"bandwidth\": 125000,
+          \"spreading_factor\": 7
+        }
+      },
+      \"data_rate_index\": 5,
+      \"coding_rate\": \"4/5\",
+      \"frequency\": \"867100000\"
+    },
+    \"received_at\": \"2021-06-12T20:09:23.109161259Z\",
+    \"consumed_airtime\": \"0.061696s\"
+  }
+}"
+06/14/2021 12:36:27 +02:00 Application Starting.
+06/14/2021 12:37:03 +02:00 Request: "{
+  \"@type\": \"type.googleapis.com/ttn.lorawan.v3.ApplicationUp\",
+  \"end_device_ids\": {
+    \"device_id\": \"grp1-dev1\",
+    \"application_ids\": {
+      \"application_id\": \"ttn-ddoit-test\"
+    },
+    \"dev_eui\": \"500291883D94FEFF\",
+    \"join_eui\": \"70B3D50000000002\",
+    \"dev_addr\": \"260B03F4\"
+  },
+  \"correlation_ids\": [
+    \"as:up:01F80XFRKV826QVEZYX0110VFG\",
+    \"ns:uplink:01F80XFRD5XMQK79NAZNYHAYNH\",
+    \"pba:conn:up:01F7XM3EVNAGTKAXW558W1767Q\",
+    \"pba:uplink:01F80XFR9XAHP4HPHDRMSF2N2R\",
+    \"rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01F80XFRD4WEHJ0SWYF1WN1X9Q\",
+    \"rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01F80XFRKV7N0QATK476NDA0J1\"
+  ],
+  \"received_at\": \"2021-06-12T20:09:23.324239701Z\",
+  \"uplink_message\": {
+    \"session_key_id\": \"AXoBD2kJirkNxZ0ul20/xQ==\",
+    \"f_port\": 4,
+    \"f_cnt\": 83,
+    \"frm_payload\": \"gv7kAoxQzQAEAQBAAQ==\",
+    \"decoded_payload\": {
+      \"altitude\": 320,
+      \"bytes\": [
+        130,
+        254,
+        228,
+        2,
+        140,
+        80,
+        205,
+        0,
+        4,
+        1,
+        0,
+        64,
+        1
+      ],
+      \"hdop\": 0.01,
+      \"latitude\": 48.561794,
+      \"longitude\": 13.4555,
+      \"port\": 4,
+      \"sats\": 4
+    },
+    \"rx_metadata\": [
+      {
+        \"gateway_ids\": {
+          \"gateway_id\": \"packetbroker\"
+        },
+        \"packet_broker\": {
+          \"message_id\": \"01F80XFR9XAHP4HPHDRMSF2N2R\",
+          \"forwarder_net_id\": \"000013\",
+          \"forwarder_tenant_id\": \"ttn\",
+          \"forwarder_cluster_id\": \"ttn-v2-eu-4\",
+          \"home_network_net_id\": \"000013\",
+          \"home_network_tenant_id\": \"ttn\",
+          \"home_network_cluster_id\": \"ttn-eu1\",
+          \"hops\": [
+            {
+              \"received_at\": \"2021-06-12T20:09:23.005472425Z\",
+              \"sender_address\": \"52.169.150.138\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.006117112Z\",
+              \"sender_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"sender_address\": \"forwarder_uplink\",
+              \"receiver_name\": \"router-666f4cd6b8-t6w9f\",
+              \"receiver_agent\": \"pbrouter/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.007374752Z\",
+              \"sender_name\": \"router-666f4cd6b8-t6w9f\",
+              \"sender_address\": \"deliver.000013_ttn_ttn-eu1.uplink\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-88k7w\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            }
+          ]
+        },
+        \"time\": \"2021-06-12T20:09:22.980222Z\",
+        \"rssi\": -47,
+        \"channel_rssi\": -47,
+        \"snr\": 10,
+        \"uplink_token\": \"eyJnIjoiWlhsS2FHSkhZMmxQYVVwQ1RWUkpORkl3VGs1VE1XTnBURU5LYkdKdFRXbFBhVXBDVFZSSk5GSXdUazVKYVhkcFlWaFphVTlwU2tkU00yUXpZMFJvZEdJelRqRmlla1p6VkZVNVlVbHBkMmxrUjBadVNXcHZhVlpyV2xKa2JWRXlUa2hHZDA5R1drNWpWRUpXV20xUmVGcHNRakphZVVvNUxrNVBNVlZUVUZkaGNYSkhTamx5VDFCTUxXdFpPRUV1ZWw4MlQwRkJXRzEzUzA5aFMyeFVSeTR4UVZkZlpGUlVTV1pLV2pabWNFMVplbWxvUWs5TGRWTnZlbGhzTkhCalJtTlNWbGxIVFhJdGRUbHJWMHRXTjBGcVRXcFNVbWxaVlhSbGFtOVdZVWM0ZFMxMFpXeFBYMTl1VERkc2VuTlhkSFJwUm5sM1FXdElkWGxsYm0xdU1YcDNTVmN5UzNScFltb3lPVzF5WjNkb2RsQTFhREpUYkU1WGVVRkJlVEpmUzNKa1lXOU1XVGhsZEc5MVowUkdVV294V25JMFQxOUhSbkpvUkRoSFNHTlJVMmhMWDB0U1RTNVRZbGhxU0ZOMFFXOUhOemxtVFcxNVlrOW1hbGQzIiwiYSI6eyJmbmlkIjoiMDAwMDEzIiwiZnRpZCI6InR0biIsImZjaWQiOiJ0dG4tdjItZXUtNCJ9fQ==\"
+      }
+    ],
+    \"settings\": {
+      \"data_rate\": {
+        \"lora\": {
+          \"bandwidth\": 125000,
+          \"spreading_factor\": 7
+        }
+      },
+      \"data_rate_index\": 5,
+      \"coding_rate\": \"4/5\",
+      \"frequency\": \"867100000\"
+    },
+    \"received_at\": \"2021-06-12T20:09:23.109161259Z\",
+    \"consumed_airtime\": \"0.061696s\"
+  }
+}"
+06/14/2021 12:39:51 +02:00 Application Starting.
+06/14/2021 12:40:30 +02:00 Request: "{
+  \"@type\": \"type.googleapis.com/ttn.lorawan.v3.ApplicationUp\",
+  \"end_device_ids\": {
+    \"device_id\": \"grp1-dev1\",
+    \"application_ids\": {
+      \"application_id\": \"ttn-ddoit-test\"
+    },
+    \"dev_eui\": \"500291883D94FEFF\",
+    \"join_eui\": \"70B3D50000000002\",
+    \"dev_addr\": \"260B03F4\"
+  },
+  \"correlation_ids\": [
+    \"as:up:01F80XFRKV826QVEZYX0110VFG\",
+    \"ns:uplink:01F80XFRD5XMQK79NAZNYHAYNH\",
+    \"pba:conn:up:01F7XM3EVNAGTKAXW558W1767Q\",
+    \"pba:uplink:01F80XFR9XAHP4HPHDRMSF2N2R\",
+    \"rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01F80XFRD4WEHJ0SWYF1WN1X9Q\",
+    \"rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01F80XFRKV7N0QATK476NDA0J1\"
+  ],
+  \"received_at\": \"2021-06-12T20:09:23.324239701Z\",
+  \"uplink_message\": {
+    \"session_key_id\": \"AXoBD2kJirkNxZ0ul20/xQ==\",
+    \"f_port\": 4,
+    \"f_cnt\": 83,
+    \"frm_payload\": \"gv7kAoxQzQAEAQBAAQ==\",
+    \"decoded_payload\": {
+      \"altitude\": 320,
+      \"bytes\": [
+        130,
+        254,
+        228,
+        2,
+        140,
+        80,
+        205,
+        0,
+        4,
+        1,
+        0,
+        64,
+        1
+      ],
+      \"hdop\": 0.01,
+      \"latitude\": 48.561794,
+      \"longitude\": 13.4555,
+      \"port\": 4,
+      \"sats\": 4
+    },
+    \"rx_metadata\": [
+      {
+        \"gateway_ids\": {
+          \"gateway_id\": \"packetbroker\"
+        },
+        \"packet_broker\": {
+          \"message_id\": \"01F80XFR9XAHP4HPHDRMSF2N2R\",
+          \"forwarder_net_id\": \"000013\",
+          \"forwarder_tenant_id\": \"ttn\",
+          \"forwarder_cluster_id\": \"ttn-v2-eu-4\",
+          \"home_network_net_id\": \"000013\",
+          \"home_network_tenant_id\": \"ttn\",
+          \"home_network_cluster_id\": \"ttn-eu1\",
+          \"hops\": [
+            {
+              \"received_at\": \"2021-06-12T20:09:23.005472425Z\",
+              \"sender_address\": \"52.169.150.138\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.006117112Z\",
+              \"sender_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"sender_address\": \"forwarder_uplink\",
+              \"receiver_name\": \"router-666f4cd6b8-t6w9f\",
+              \"receiver_agent\": \"pbrouter/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.007374752Z\",
+              \"sender_name\": \"router-666f4cd6b8-t6w9f\",
+              \"sender_address\": \"deliver.000013_ttn_ttn-eu1.uplink\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-88k7w\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            }
+          ]
+        },
+        \"time\": \"2021-06-12T20:09:22.980222Z\",
+        \"rssi\": -47,
+        \"channel_rssi\": -47,
+        \"snr\": 10,
+        \"uplink_token\": \"eyJnIjoiWlhsS2FHSkhZMmxQYVVwQ1RWUkpORkl3VGs1VE1XTnBURU5LYkdKdFRXbFBhVXBDVFZSSk5GSXdUazVKYVhkcFlWaFphVTlwU2tkU00yUXpZMFJvZEdJelRqRmlla1p6VkZVNVlVbHBkMmxrUjBadVNXcHZhVlpyV2xKa2JWRXlUa2hHZDA5R1drNWpWRUpXV20xUmVGcHNRakphZVVvNUxrNVBNVlZUVUZkaGNYSkhTamx5VDFCTUxXdFpPRUV1ZWw4MlQwRkJXRzEzUzA5aFMyeFVSeTR4UVZkZlpGUlVTV1pLV2pabWNFMVplbWxvUWs5TGRWTnZlbGhzTkhCalJtTlNWbGxIVFhJdGRUbHJWMHRXTjBGcVRXcFNVbWxaVlhSbGFtOVdZVWM0ZFMxMFpXeFBYMTl1VERkc2VuTlhkSFJwUm5sM1FXdElkWGxsYm0xdU1YcDNTVmN5UzNScFltb3lPVzF5WjNkb2RsQTFhREpUYkU1WGVVRkJlVEpmUzNKa1lXOU1XVGhsZEc5MVowUkdVV294V25JMFQxOUhSbkpvUkRoSFNHTlJVMmhMWDB0U1RTNVRZbGhxU0ZOMFFXOUhOemxtVFcxNVlrOW1hbGQzIiwiYSI6eyJmbmlkIjoiMDAwMDEzIiwiZnRpZCI6InR0biIsImZjaWQiOiJ0dG4tdjItZXUtNCJ9fQ==\"
+      }
+    ],
+    \"settings\": {
+      \"data_rate\": {
+        \"lora\": {
+          \"bandwidth\": 125000,
+          \"spreading_factor\": 7
+        }
+      },
+      \"data_rate_index\": 5,
+      \"coding_rate\": \"4/5\",
+      \"frequency\": \"867100000\"
+    },
+    \"received_at\": \"2021-06-12T20:09:23.109161259Z\",
+    \"consumed_airtime\": \"0.061696s\"
+  }
+}"
+06/14/2021 12:43:03 +02:00 Request: "{
+  \"@type\": \"type.googleapis.com/ttn.lorawan.v3.ApplicationUp\",
+  \"end_device_ids\": {
+    \"device_id\": \"grp1-dev1\",
+    \"application_ids\": {
+      \"application_id\": \"ttn-ddoit-test\"
+    },
+    \"dev_eui\": \"500291883D94FEFF\",
+    \"join_eui\": \"70B3D50000000002\",
+    \"dev_addr\": \"260B03F4\"
+  },
+  \"correlation_ids\": [
+    \"as:up:01F80XFRKV826QVEZYX0110VFG\",
+    \"ns:uplink:01F80XFRD5XMQK79NAZNYHAYNH\",
+    \"pba:conn:up:01F7XM3EVNAGTKAXW558W1767Q\",
+    \"pba:uplink:01F80XFR9XAHP4HPHDRMSF2N2R\",
+    \"rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01F80XFRD4WEHJ0SWYF1WN1X9Q\",
+    \"rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01F80XFRKV7N0QATK476NDA0J1\"
+  ],
+  \"received_at\": \"2021-06-12T20:09:23.324239701Z\",
+  \"uplink_message\": {
+    \"session_key_id\": \"AXoBD2kJirkNxZ0ul20/xQ==\",
+    \"f_port\": 4,
+    \"f_cnt\": 83,
+    \"frm_payload\": \"gv7kAoxQzQAEAQBAAQ==\",
+    \"decoded_payload\": {
+      \"altitude\": 320,
+      \"bytes\": [
+        130,
+        254,
+        228,
+        2,
+        140,
+        80,
+        205,
+        0,
+        4,
+        1,
+        0,
+        64,
+        1
+      ],
+      \"latitude\": 48.561794,
+      \"longitude\": 13.4555,
+      \"port\": 4,
+      \"sats\": 4
+    },
+    \"rx_metadata\": [
+      {
+        \"gateway_ids\": {
+          \"gateway_id\": \"packetbroker\"
+        },
+        \"packet_broker\": {
+          \"message_id\": \"01F80XFR9XAHP4HPHDRMSF2N2R\",
+          \"forwarder_net_id\": \"000013\",
+          \"forwarder_tenant_id\": \"ttn\",
+          \"forwarder_cluster_id\": \"ttn-v2-eu-4\",
+          \"home_network_net_id\": \"000013\",
+          \"home_network_tenant_id\": \"ttn\",
+          \"home_network_cluster_id\": \"ttn-eu1\",
+          \"hops\": [
+            {
+              \"received_at\": \"2021-06-12T20:09:23.005472425Z\",
+              \"sender_address\": \"52.169.150.138\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.006117112Z\",
+              \"sender_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"sender_address\": \"forwarder_uplink\",
+              \"receiver_name\": \"router-666f4cd6b8-t6w9f\",
+              \"receiver_agent\": \"pbrouter/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.007374752Z\",
+              \"sender_name\": \"router-666f4cd6b8-t6w9f\",
+              \"sender_address\": \"deliver.000013_ttn_ttn-eu1.uplink\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-88k7w\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            }
+          ]
+        },
+        \"time\": \"2021-06-12T20:09:22.980222Z\",
+        \"rssi\": -47,
+        \"channel_rssi\": -47,
+        \"snr\": 10,
+        \"uplink_token\": \"eyJnIjoiWlhsS2FHSkhZMmxQYVVwQ1RWUkpORkl3VGs1VE1XTnBURU5LYkdKdFRXbFBhVXBDVFZSSk5GSXdUazVKYVhkcFlWaFphVTlwU2tkU00yUXpZMFJvZEdJelRqRmlla1p6VkZVNVlVbHBkMmxrUjBadVNXcHZhVlpyV2xKa2JWRXlUa2hHZDA5R1drNWpWRUpXV20xUmVGcHNRakphZVVvNUxrNVBNVlZUVUZkaGNYSkhTamx5VDFCTUxXdFpPRUV1ZWw4MlQwRkJXRzEzUzA5aFMyeFVSeTR4UVZkZlpGUlVTV1pLV2pabWNFMVplbWxvUWs5TGRWTnZlbGhzTkhCalJtTlNWbGxIVFhJdGRUbHJWMHRXTjBGcVRXcFNVbWxaVlhSbGFtOVdZVWM0ZFMxMFpXeFBYMTl1VERkc2VuTlhkSFJwUm5sM1FXdElkWGxsYm0xdU1YcDNTVmN5UzNScFltb3lPVzF5WjNkb2RsQTFhREpUYkU1WGVVRkJlVEpmUzNKa1lXOU1XVGhsZEc5MVowUkdVV294V25JMFQxOUhSbkpvUkRoSFNHTlJVMmhMWDB0U1RTNVRZbGhxU0ZOMFFXOUhOemxtVFcxNVlrOW1hbGQzIiwiYSI6eyJmbmlkIjoiMDAwMDEzIiwiZnRpZCI6InR0biIsImZjaWQiOiJ0dG4tdjItZXUtNCJ9fQ==\"
+      }
+    ],
+    \"settings\": {
+      \"data_rate\": {
+        \"lora\": {
+          \"bandwidth\": 125000,
+          \"spreading_factor\": 7
+        }
+      },
+      \"data_rate_index\": 5,
+      \"coding_rate\": \"4/5\",
+      \"frequency\": \"867100000\"
+    },
+    \"received_at\": \"2021-06-12T20:09:23.109161259Z\",
+    \"consumed_airtime\": \"0.061696s\"
+  }
+}"
+06/14/2021 12:45:07 +02:00 Request: "{
+  \"@type\": \"type.googleapis.com/ttn.lorawan.v3.ApplicationUp\",
+  \"end_device_ids\": {
+    \"device_id\": \"grp1-dev1\",
+    \"application_ids\": {
+      \"application_id\": \"ttn-ddoit-test\"
+    },
+    \"dev_eui\": \"500291883D94FEFF\",
+    \"join_eui\": \"70B3D50000000002\",
+    \"dev_addr\": \"260B03F4\"
+  },
+  \"correlation_ids\": [
+    \"as:up:01F80XFRKV826QVEZYX0110VFG\",
+    \"ns:uplink:01F80XFRD5XMQK79NAZNYHAYNH\",
+    \"pba:conn:up:01F7XM3EVNAGTKAXW558W1767Q\",
+    \"pba:uplink:01F80XFR9XAHP4HPHDRMSF2N2R\",
+    \"rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01F80XFRD4WEHJ0SWYF1WN1X9Q\",
+    \"rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01F80XFRKV7N0QATK476NDA0J1\"
+  ],
+  \"received_at\": \"2021-06-12T20:09:23.324239701Z\",
+  \"uplink_message\": {
+    \"session_key_id\": \"AXoBD2kJirkNxZ0ul20/xQ==\",
+    \"f_port\": 4,
+    \"f_cnt\": 83,
+    \"frm_payload\": \"gv7kAoxQzQAEAQBAAQ==\",
+    \"decoded_payload\": {
+      \"bytes\": [],
+      \"port\": 4
+    },
+    \"rx_metadata\": [
+      {
+        \"gateway_ids\": {
+          \"gateway_id\": \"packetbroker\"
+        },
+        \"packet_broker\": {
+          \"message_id\": \"01F80XFR9XAHP4HPHDRMSF2N2R\",
+          \"forwarder_net_id\": \"000013\",
+          \"forwarder_tenant_id\": \"ttn\",
+          \"forwarder_cluster_id\": \"ttn-v2-eu-4\",
+          \"home_network_net_id\": \"000013\",
+          \"home_network_tenant_id\": \"ttn\",
+          \"home_network_cluster_id\": \"ttn-eu1\",
+          \"hops\": [
+            {
+              \"received_at\": \"2021-06-12T20:09:23.005472425Z\",
+              \"sender_address\": \"52.169.150.138\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.006117112Z\",
+              \"sender_name\": \"router-dataplane-6497cdbc97-nkxcv\",
+              \"sender_address\": \"forwarder_uplink\",
+              \"receiver_name\": \"router-666f4cd6b8-t6w9f\",
+              \"receiver_agent\": \"pbrouter/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            },
+            {
+              \"received_at\": \"2021-06-12T20:09:23.007374752Z\",
+              \"sender_name\": \"router-666f4cd6b8-t6w9f\",
+              \"sender_address\": \"deliver.000013_ttn_ttn-eu1.uplink\",
+              \"receiver_name\": \"router-dataplane-6497cdbc97-88k7w\",
+              \"receiver_agent\": \"pbdataplane/1.6.0-beta.3 go/1.16.4 linux/amd64\"
+            }
+          ]
+        },
+        \"time\": \"2021-06-12T20:09:22.980222Z\",
+        \"rssi\": -47,
+        \"channel_rssi\": -47,
+        \"snr\": 10,
+        \"uplink_token\": \"eyJnIjoiWlhsS2FHSkhZMmxQYVVwQ1RWUkpORkl3VGs1VE1XTnBURU5LYkdKdFRXbFBhVXBDVFZSSk5GSXdUazVKYVhkcFlWaFphVTlwU2tkU00yUXpZMFJvZEdJelRqRmlla1p6VkZVNVlVbHBkMmxrUjBadVNXcHZhVlpyV2xKa2JWRXlUa2hHZDA5R1drNWpWRUpXV20xUmVGcHNRakphZVVvNUxrNVBNVlZUVUZkaGNYSkhTamx5VDFCTUxXdFpPRUV1ZWw4MlQwRkJXRzEzUzA5aFMyeFVSeTR4UVZkZlpGUlVTV1pLV2pabWNFMVplbWxvUWs5TGRWTnZlbGhzTkhCalJtTlNWbGxIVFhJdGRUbHJWMHRXTjBGcVRXcFNVbWxaVlhSbGFtOVdZVWM0ZFMxMFpXeFBYMTl1VERkc2VuTlhkSFJwUm5sM1FXdElkWGxsYm0xdU1YcDNTVmN5UzNScFltb3lPVzF5WjNkb2RsQTFhREpUYkU1WGVVRkJlVEpmUzNKa1lXOU1XVGhsZEc5MVowUkdVV294V25JMFQxOUhSbkpvUkRoSFNHTlJVMmhMWDB0U1RTNVRZbGhxU0ZOMFFXOUhOemxtVFcxNVlrOW1hbGQzIiwiYSI6eyJmbmlkIjoiMDAwMDEzIiwiZnRpZCI6InR0biIsImZjaWQiOiJ0dG4tdjItZXUtNCJ9fQ==\"
+      }
+    ],
+    \"settings\": {
+      \"data_rate\": {
+        \"lora\": {
+          \"bandwidth\": 125000,
+          \"spreading_factor\": 7
+        }
+      },
+      \"data_rate_index\": 5,
+      \"coding_rate\": \"4/5\",
+      \"frequency\": \"867100000\"
+    },
+    \"received_at\": \"2021-06-12T20:09:23.109161259Z\",
+    \"consumed_airtime\": \"0.061696s\"
+  }
+}"
